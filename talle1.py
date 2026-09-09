@@ -24,3 +24,31 @@ print(matriz_original)
 
 print("\nMatriz Procesada (Ajustada):")
 print(matriz_procesada)
+
+# ==========================================
+# LABORATORIO FINAL: PROGRAMANDO UN KERNEL
+# (Convolución / Filtro 3x3)
+# ==========================================
+
+print("\n" + "="*40)
+print("=== TALLER DE LABORATORIO FINAL ===")
+
+# 1. Crear en NumPy las matrices "Sección de Imagen (I)" y "Kernel (K)"
+I = np.array([
+    [100, 100, 100],
+    [100, 200, 100],
+    [100, 100, 100]
+])
+
+K = np.array([
+    [ 0, -1,  0],
+    [-1,  5, -1],
+    [ 0, -1,  0]
+])
+
+# 2. Calcular el valor central (Producto Hadamard e/ elemento y suma total)
+producto_hadamard = I * K
+pixel_central = np.sum(producto_hadamard)
+
+# 3. Imprimir el resultado del píxel central
+print(f"\nValor del píxel central calculado: {pixel_central}")
