@@ -1,0 +1,23 @@
+1. TALLER ANALÍTICO: CÁLCULO DE LA CONVOLUCIÓN (FILTRO DE MEDIA)
+------------------------------------------------------------
+
+Dada la sección de imagen I (matriz 3x3) y un Kernel K de filtro de media (multiplicado por 1/9):
+Imagen (I):
+[[ 10,  20,  30],
+ [ 15, 250,  15],
+ [ 20,  10,  20]]
+
+- Pregunta 1: Calcule matemáticamente el nuevo valor del píxel central (que actualmente vale 250). Realice la multiplicación y la suma.
+   Resolución (Suma de productos ponderados por 1/9):
+    Suma total = (10*1/9) + (20*1/9) + (30*1/9) + (15*1/9) + (250*1/9) + (15*1/9) + (20*1/9) + (10*1/9) + (20*1/9)
+    Suma total = (10 + 20 + 30 + 15 + 250 + 15 + 20 + 10 + 20) / 9
+    Suma total = 390 / 9 = 43.33
+   Respuesta: El nuevo valor del píxel central calculado es 43.33.
+
+- Pregunta 2: El valor 250 era claramente un "ruido de sal" (un píxel blanco anómalo en una zona oscura). Observe su nuevo valor. ¿Por qué se dice que el filtro de media difumina o suaviza la imagen?
+  Respuesta: Se dice que difumina la imagen porque al calcular un promedio aritmético lineal, el píxel anómalo extremo (250) arrastra consigo el valor del resultado, generando un halo o mancha grisácea alrededor del punto en lugar de eliminarlo por completo.
+
+------------------------------------------------------------
+2. ANÁLISIS CRÍTICOS DE FILTROS ESPACIALES (LABORATORIO)
+------------------------------------------------------------
+- Filtro de Mediana: Fue el más efectivo frente al ruido porque al ordenar los valores de menor a mayor bajo el kernel y seleccionar el elemento central, descarta de forma absoluta los valores extremos (como el 0 o el 255), eliminando el ruido por completo sin difuminar ni manchar los bordes de la imagen.
