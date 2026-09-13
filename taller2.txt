@@ -1,0 +1,6 @@
+1. TALLER ANALÍTICO 1: OPERACIONES CON TENSORES
+------------------------------------------------------------
+- Pregunta 1: Si ejecutamos la instrucción recorte = imagen[100:200, 300:400, 1] sobre una imagen de 1920x1080, ¿cuáles son las dimensiones exactas (shape) de la variable recorte resultante y qué información específica contiene?
+  Respuesta: Las dimensiones exactas de la variable son (100, 100) Contiene una matriz con los valores de intensidad de píxel correspondientes únicamente al canal verde dentro de esa región rectangular específica
+- Pregunta 2: ¿Por qué es computacionalmente más eficiente aislar un canal usando Slicing (ej. img[:,:,0]) en lugar de crear dos ciclos for anidados para iterar sobre la altura y anchura?
+  Respuesta: Porque NumPy realiza el slicing mediante operaciones vectorizadas y optimizadas en código nativo evitando la sobrecarga de ejecutar dos ciclos for directamente en Python, esto permite acceder y procesar los datos de forma mucho más eficiente.
