@@ -1,0 +1,18 @@
+1. TALLER ANALÍTICO 1: INDEXACIÓN Y TENSORES
+------------------------------------------------------------
+- Pregunta 1: En la Matriz A, ¿cuál es el valor exacto del elemento A_{2,3} (asumiendo índice base 0)? ¿Qué representa visualmente?
+  Respuesta: El valor es 255. Visualmente representa la intensidad de brillo de ese píxel específico en una imagen de escala de grises de 8 bits blanco absoluto
+
+- Pregunta 2: Si tenemos un Tensor RGB de dimensiones 1080x1920x3, ¿cuántos valores individuales (bytes) se almacenan sin comprimir?
+  Respuesta: Se multiplican las dimensiones -> 1080 * 1920 * 3 = 6,220,800 bytes aprox 6.22 MB
+
+------------------------------------------------------------
+3. TALLER ANALÍTICO 2: TRANSFORMACIONES ESPACIALES
+------------------------------------------------------------
+- Pregunta 1: Si transponemos una matriz identidad de 4x4, ¿cuál es la matriz resultante? Explique geométricamente por qué.
+  Respuesta: El resultado es la misma matriz de 4x4 ocurre porque al reflejarla sobre su diagonal principal donde están los unos, los elementos siguen siendo idénticos
+
+- Pregunta 2: Una imagen RGB de forma (200, 200, 3) al aplanarla para una Red Neuronal, ¿cuántas neuronas exactas necesita?
+  Respuesta: Necesita  120,000 neuronas (200 * 200 * 3)
+
+
