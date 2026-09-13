@@ -1,0 +1,22 @@
+1. TALLER ANALÍTICO: BOUNDING BOX
+------------------------------------------------------------
+
+Dadas las coordenadas de las esquinas de un objeto irregular:
+A(2, 4), B(8, 2), C(10, 7), D(3, 9)
+
+- Pregunta 1: Determine analíticamente las coordenadas extremas (X_min, Y_min, X_max, Y_max) para calcular el Bounding Box.
+   Extracción de coordenadas en X: 2, 8, 10, 3 -> X_min = 2, X_max = 10
+   Extracción de coordenadas en Y: 4, 2, 7, 9 -> Y_min = 2, Y_max = 9
+   
+   Respuesta: Las coordenadas extremas del rectángulo envolvente son X_min = 2, Y_min = 2, X_max = 10, e Y_max = 9
+
+- Pregunta 2: Calcule el ancho (W) y el alto (H) del Bounding Box.
+   Ancho (W) = X_max - X_min = 10 - 2 = 8
+   Alto (H) = Y_max - Y_min = 9 - 2 = 7
+
+   Respuesta: El ancho del Bounding Box es 8 unidades y el alto es 7 unidades
+
+------------------------------------------------------------
+2. CONCLUSIÓN PRÁCTICA: CLASIFICACIÓN DE OBJETOS
+------------------------------------------------------------
+- El pipeline combina correctamente la umbralización adaptativa de Otsu con operaciones morfológicas de apertura para limpiar el ruido de fondo, permitiendo extraer contornos externos precisos y calcular métricas geométricas (momentos, área y centroides) para la discriminación automatizada por tamaño.
