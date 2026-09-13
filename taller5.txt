@@ -1,0 +1,32 @@
+1. TALLER ANALÍTICO: CÁLCULO DEL GRADIENTE
+------------------------------------------------------------
+
+Dada la matriz de imagen de 3x3 con un borde vertical perfecto:
+[[  0,   0, 255],
+ [  0,   0, 255],
+ [  0,   0, 255]]
+
+- Pregunta 1: Calcule la convolución de esta matriz con el Kernel Sobel X (Gx) centrándose en el píxel del medio. ¿Cuál es el valor del gradiente en X?
+   Resolución con Kernel Sobel X (Gx):
+    [[-1, 0, 1],
+     [-2, 0, 2],
+     [-1, 0, 1]]
+    Cálculo en el píxel central: (-1*0 + 0*0 + 1*255) + (-2*0 + 0*0 + 2*255) + (-1*0 + 0*0 + 1*255)
+    = 255 + 510 + 255 = 1020.
+   Respuesta: El valor de la respuesta del filtro en el píxel central es 1020, representando una variación alta en el eje horizontal.
+
+- Pregunta 2: Calcule la convolución con el Kernel Sobel Y (Gy). ¿Por qué el resultado es cero? ¿Qué indica esto sobre la dirección del borde?
+   Resolución con Kernel Sobel Y (Gy):
+    [[-1, -2, -1],
+     [ 0,  0,  0],
+     [ 1,  2,  1]]
+    Cálculo en el píxel central: (-1*0 + -2*0 + -1*255) + (0*0 + 0*0 + 0*255) + (1*0 + 2*0 + 1*255)
+    = -255 + 0 + 255 = 0.
+   Respuesta: El resultado es cero porque no hay cambio de intensidad vertical a lo largo de las filas idénticas, lo que indica la ausencia total de bordes horizontales.
+
+------------------------------------------------------------
+2. CONCLUSIÓN PRÁCTICA: ALGORITMO CANNY Y UMBRALES
+------------------------------------------------------------
+- Canny Sensible (10, 50): Detecta un nivel masivo de contornos, incorporando ruido adicional debido a umbrales excesivamente bajos.
+- Canny Estándar (50, 150): Establece el umbral de histéresis ideal para conectar trazos reales y suprimir interferencias.
+- Canny Estricto (200, 250): Filtra prácticamente todo excepto los cambios drásticos, fragmentando los bordes del objeto.
