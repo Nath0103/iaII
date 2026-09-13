@@ -1,0 +1,22 @@
+1. TALLER ANALÍTICO: FUNCIÓN ESCALÓN (UMBRALIZACIÓN)
+------------------------------------------------------------
+Dada la sub-matriz I de 3x3 con intensidades de gris:
+[[80,  120, 140],
+ [90,  200, 210],
+ [50,  130, 250]]
+
+- Pregunta 1: Aplique analíticamente una umbralización binaria con T = 135. Escriba la matriz resultante (solo debe contener 0 y 255).
+  * Respuesta: Evaluando T=135 , mayores o igual a 135 va a ser (255) si es menor (0)
+    [[  0,   0, 255],
+     [  0, 255, 255],
+     [  0,   0, 255]]
+
+- Pregunta 2: Si el objetivo era aislar todos los valores mayores a 100, ¿cuál fue el error de elegir T = 135? Explique qué le ocurriría visualmente al objeto en la imagen segmentada
+  * Respuesta: El error principal fue establecerlo demasiado alto T = 135 en lugar de 100, lo que provocó un sub-muestreo o perdida de información relevante, 
+    visualmente, píxeles válidos del objeto que tenían intensidades entre 101 y 134 como el 120 y el 130 fueron descartados erróneamente convirtiéndose en fondo negro (0), fragmentando la forma del objeto de interés y generando huecos o pérdida de continuidad en la imagen segmentada
+
+------------------------------------------------------------
+2. CONCLUSIÓN PRÁCTICA: OPERACIONES MORFOLÓGICAS
+------------------------------------------------------------
+- Apertura (Erosión + Dilatación): Es eficaz para eliminar el ruido blanco aislado (píxeles brillantes en el fondo) sin alterar significativamente las dimensiones del objeto principal
+- Cierre (Dilatación + Erosión): Es eficaz para rellenar pequeños huecos oscuros dentro del objeto de interés y cerrar pequeñas separaciones, manteniendo la estructura general del objeto
